@@ -279,7 +279,9 @@ void calculate()
 		cout << prompt;
 		Token t = ts.get();
 		while (t.kind == print) t = ts.get(); //Discard all prints first
-		if (t.kind == quit) return; //Quit
+		if (t.kind == quit){
+			return; //Quit
+		}
 		ts.unget(t);
 		cout << result << statement() << endl;
 	}
